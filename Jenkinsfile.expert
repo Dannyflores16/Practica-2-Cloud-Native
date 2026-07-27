@@ -17,21 +17,21 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Instalando dependencias...'
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Ejecutando pruebas...'
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 echo 'Construyendo imagen Docker...'
-                sh 'docker build -t ${APP_NAME}:latest .'
+                bat 'docker build -t %APP_NAME%:latest .'
             }
         }
     }
