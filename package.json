@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "scripts": {
-  "start": "node src/app.js",
-  "dev": "nodemon src/app.js",
-  "test": "echo \"No tests configured\" && exit 0"
-},
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dannyflores16/Practica-2-Cloud-Native.git"
@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/Dannyflores16/Practica-2-Cloud-Native#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "prom-client": "^15.1.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
