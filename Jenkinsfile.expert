@@ -45,7 +45,7 @@ stage('Terraform') {
                 bat 'docker build -t %APP_NAME%:latest .'
             }
         }
-    }
+    
 
       stage('Kubernetes Deploy') {
             steps {
