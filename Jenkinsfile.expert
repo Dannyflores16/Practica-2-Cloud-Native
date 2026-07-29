@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     environment {
-        APP_NAME = "cloud-native-app"
-    }
+    APP_NAME = "cloud-native-app"
+    KUBECONFIG = "C:\\Users\\DANIEL\\.kube\\config"
+}
 
     stages {
 
