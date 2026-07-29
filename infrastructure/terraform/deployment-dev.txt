@@ -1,0 +1,11 @@
+Aplicacion: cloud-native-app
+Ambiente: dev
+
+Infraestructura creada con Terraform.
+
+Componentes:
+- Kubernetes
+- Docker
+- Jenkins CI/CD
+- Monitoring
+- Auto Scaling

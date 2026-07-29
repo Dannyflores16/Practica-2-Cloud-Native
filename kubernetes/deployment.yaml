@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-native-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloud-native-app
+  template:
+    metadata:
+      labels:
+        app: cloud-native-app
+    spec:
+      containers:
+      - name: cloud-native-app
+        image: cloud-native-app:latest
+        ports:
+        - containerPort: 4000
+
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 4000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 4000
+          initialDelaySeconds: 5
+          periodSeconds: 5
