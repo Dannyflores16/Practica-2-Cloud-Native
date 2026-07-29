@@ -27,18 +27,17 @@ pipeline {
                 bat 'npm test'
             }
         }
-
-        stage('Terraform') {
-            steps {
-                echo 'Ejecutando Terraform...'
-                dir('infrastructure\\terraform') {
-                    bat 'terraform init'
-                    bat 'terraform validate'
-                    bat 'terraform plan'
-                    bat 'terraform apply -auto-approve'
-                }
-            }
+stage('Terraform') {
+    steps {
+        echo 'Ejecutando Terraform...'
+        dir('infrastructure\\terraform') {
+            bat 'C:\\terraform\\terraform.exe init'
+            bat 'C:\\terraform\\terraform.exe validate'
+            bat 'C:\\terraform\\terraform.exe plan'
+            bat 'C:\\terraform\\terraform.exe apply -auto-approve'
         }
+    }
+}
 
         stage('Build Docker Image') {
             steps {
