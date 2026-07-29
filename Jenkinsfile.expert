@@ -47,6 +47,21 @@ stage('Terraform') {
         }
     }
 
+      stage('Kubernetes Deploy') {
+            steps {
+                echo 'Desplegando aplicación en Kubernetes...'
+
+                bat 'kubectl apply -f kubernetes/deployment.yaml'
+                bat 'kubectl apply -f kubernetes/service.yaml'
+                bat 'kubectl apply -f kubernetes/hpa.yaml'
+
+                bat 'kubectl get deployments'
+                bat 'kubectl get pods'
+                bat 'kubectl get hpa'
+            }
+        }
+    }
+
     post {
 
         success {
